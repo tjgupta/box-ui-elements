@@ -29,10 +29,14 @@ const icons = [
                             .icon-chat-bubble-example .background-color {
                                 fill: #999999;
                             }
+
+                            .icon-chat-bubble-example:hover .outline-color {
+                                flood-color: red;
+                            }
                         `}
                     </style>
                     <IconChatBubble />
-                    <IconChatBubble className="icon-chat-bubble-example" />
+                    <IconChatBubble className="icon-chat-bubble-example" outlineColor={"#fff"} outlineWidth={1} />
                 </div>
             );
         },

@@ -17,3 +17,10 @@ export type TwoTonedIcon = {
     title?: string | Element<any>,
     width?: number,
 };
+
+export type OutlinedIcon = {
+    outlineColor?: string,
+    outlineWidth?: number,
+};
+
+export type TwoTonedOutlinedIcon = { ...TwoTonedIcon, ...OutlinedIcon };
