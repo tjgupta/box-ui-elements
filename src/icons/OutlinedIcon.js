@@ -8,6 +8,8 @@ import type { Icon } from './flowTypes';
 
 type Props = Icon & {
     children: React.Node,
+    outlineColor?: string,
+    outlineWidth?: number,
 };
 
 class OutlinedIcon extends React.Component<Props> {
@@ -26,12 +28,7 @@ class OutlinedIcon extends React.Component<Props> {
                 {outlineColor && outlineWidth && (
                     <OutlineFilter id={this.outlineId} outlineColor={outlineColor} outlineWidth={outlineWidth} />
                 )}
-                {React.Children.map(children, (elem, i) => {
-                    if (i === 0) {
-                        return React.cloneElement(elem, { filter });
-                    }
-                    return React.cloneElement(elem);
-                })}
+                <g filter={filter}>{children}</g>
             </AccessibleSVG>
         );
     }
